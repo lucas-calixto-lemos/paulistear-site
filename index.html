@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Paulistear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Quicksand:wght@400;500;600;700&family=Urbanist:wght@600;700;800;900&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="weave" aria-hidden="true"><svg id="weaveSvg" xmlns="http://www.w3.org/2000/svg"></svg></div>
+
+<header class="nav" id="nav">
+  <a class="nav-logo" href="#inicio" aria-label="Paulistear — início"><img src="assets/logo.png" alt="Paulistear" width="438" height="160"></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#o-que-e">O Paulistear</a></li>
+    <li><a href="#por-que">Por que Paulista</a></li>
+    <li><a href="#como-atua">Como atua</a></li>
+    <li><a href="#mapa">Ecossistema</a></li>
+    <li><a href="#oportunidades">Oportunidades</a></li>
+    <li><a href="#governanca">Governança</a></li>
+  </ul>
+  <a class="btn yellow nav-cta" href="#conecte" style="padding:.7em 1.05em;font-size:.86rem;border-radius:11px">Faça parte</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false"><i></i><i></i><i></i></button>
+</header>
+
+<main id="page">
+
+<!-- 1. HERO -->
+<section class="sec hero" id="inicio" data-sec>
+  <div class="hero-top">
+    <div class="hero-brand">
+      <div class="mark-space" id="mark"></div>
+      <h1>
+        <span class="wm" role="img" aria-label="Paulistear"></span>
+        <span class="tagline"><span class="tag-soft">Onde o conhecimento e a indústria se conectam<br>para transformar o futuro de</span> <b>Paulista</b><i class="px"></i></span>
+      </h1>
+    </div>
+  </div>
+  <div class="hero-body">
+    <div class="hero-copy">
+      <p class="lead"><i class="px"></i><strong>Conectando</strong> <span class="lead-rest"><mark>startups, universidades, indústrias e capital para acelerar o desenvolvimento sustentável do nosso município.</mark></span></p>
+      <div class="ctas">
+        <a class="btn green" href="#conecte">Quero fazer parte da rede <span class="arr">→</span></a>
+        <a class="btn pink" href="#por-que">Conheça o ecossistema <span class="arr">↓</span></a>
+        
+      </div>
+    </div>
+    <figure class="loom" hidden>
+      <div class="loom-head">
+        <span class="def"><b>Paulis·tear</b><br>tear, s.m. — máquina que entrelaça fios para formar um tecido</span>
+      </div>
+      <canvas id="loom" aria-label="Animação de um tear entrelaçando fios coloridos que representam startups, universidades, indústrias e capital" role="img"></canvas>
+      <figcaption>
+        <span style="--c:var(--pink)"><i></i>Startups</span>
+        <span style="--c:var(--purple)"><i></i>Universidades</span>
+        <span style="--c:var(--yellow)"><i></i>Indústrias</span>
+        <span style="--c:var(--sky)"><i></i>Capital</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 2. O QUE É -->
+<section class="sec about" id="o-que-e" data-sec>
+  <h2 class="about-title">O que é o <span class="wm" role="img" aria-label="Paulistear" style="aspect-ratio:1400/177"></span>?</h2>
+  <div class="about-grid">
+    <div class="about-text" lang="pt-BR">
+      <p class="js-balance">O Paulistear é o Núcleo de Inovação de Paulista, criado para conectar os diferentes atores do ecossistema local e transformar conhecimento, tecnologia e conexões em oportunidades para o desenvolvimento sustentável do município.</p>
+      <span class="four">Aqui, governo, academia, empresas e sociedade <span style="white-space:nowrap">civil<span class="sq" aria-hidden="true"></span></span></span>
+      <p>trabalham de forma integrada para aproximar conhecimento e mercado, estimular a inovação e fortalecer o ambiente de negócios de Paulista.</p>
+    </div>
+    <figure class="helix">
+      <canvas id="helix" role="img" aria-label="Quádrupla Hélice: quatro fios entrelaçados representando governo, academia, empresas e sociedade civil"></canvas>
+      <ul class="helix-legend" id="helixLegend">
+        <li><button data-i="0" style="--c:var(--yellow)"><i></i>Governo</button></li>
+        <li><button data-i="1" style="--c:var(--pink)"><i></i>Educação e Academia</button></li>
+        <li><button data-i="2" style="--c:var(--sky)"><i></i>Empresas e Indústria</button></li>
+        <li><button data-i="3" style="--c:var(--green)"><i></i>Sociedade Civil</button></li>
+      </ul>
+      <figcaption class="helix-cap">Quádrupla Hélice</figcaption>
+    </figure>
+  </div>
+<div class="quote-wrap">
+  <blockquote class="quote" id="quote">
+    <span class="pp" aria-hidden="true"></span>
+    <p id="quoteText">Potencializar conhecimento e conexões com inovação para o desenvolvimento sustentável de Paulista.</p>
+  </blockquote>
+  <div class="quote-hold" aria-hidden="true"></div>
+  </div>
+  <div class="quote-tail" aria-hidden="true"></div>
+</section>
+
+<!-- 3. POR QUE PAULISTA -->
+<section class="sec why" id="por-que" data-sec>
+  <div class="why-grid">
+    <div class="why-side">
+      <span class="eyebrow" style="color:var(--blue)">Território estratégico</span>
+      <h2>Por que <em>Paulista</em>?</h2>
+      <p>Paulista reúne ativos estratégicos que podem impulsionar novos negócios, projetos de inovação e conexões entre empresas, academia, governo e investidores.</p>
+      <figure class="why-photo">
+        <div class="ph" role="img" aria-label="Vista do centro de Paulista"></div>
+        <figcaption><b>Paulista · PE</b>7°56′ S · 34°52′ O<br>Região Metropolitana do Recife</figcaption>
+      </figure>
+    </div>
+    <div class="why-cards">
+      <article class="wcard" style="--i:0;--bg:var(--blue);--fg:#fff">
+        <span class="tag">Diferencial · indústria</span>
+        <div class="wc-head"><h3>Base industrial</h3><svg viewBox="0 0 180 130" aria-hidden="true"><path d="M0 130V60l36 22V60l36 22V60l36 22V20h22v110z" fill="#FFC400"/><rect x="138" y="0" width="16" height="130" fill="#5DAAE7"/><rect x="160" y="30" width="16" height="100" fill="#fff" opacity=".35"/></svg></div>
+        <p>Paulista possui uma tradição industrial sólida, criando demandas reais para inovação aberta e oportunidades de parceria entre empresas e startups.</p>
+      </article>
+      <article class="wcard" style="--i:1;--bg:var(--purple);--fg:#fff">
+        <span class="tag">Diferencial · conhecimento</span>
+        <div class="wc-head"><h3>Capacidade acadêmica</h3><svg viewBox="0 0 180 130" aria-hidden="true"><rect x="10" y="100" width="150" height="22" fill="#FFC400"/><rect x="24" y="72" width="130" height="22" fill="#A7BA2E"/><rect x="4" y="44" width="140" height="22" fill="#5DAAE7"/><rect x="30" y="16" width="120" height="22" fill="#EC5E81"/><rect x="150" y="0" width="12" height="44" fill="#fff" opacity=".5"/></svg></div>
+        <p>O município conta com instituições de ensino superior, Instituto Federal, Sistema S e laboratórios de pesquisa, formando uma rede de conhecimento e desenvolvimento tecnológico.</p>
+      </article>
+      <article class="wcard" style="--i:2;--bg:var(--yellow);--fg:var(--ink)">
+        <span class="tag">Diferencial · infraestrutura</span>
+        <div class="wc-head"><h3>Infraestrutura para inovação</h3><svg viewBox="0 0 180 130" aria-hidden="true"><rect x="0" y="70" width="36" height="60" fill="#2041B4"/><rect x="46" y="36" width="36" height="94" fill="#903FE1"/><rect x="92" y="4" width="36" height="126" fill="none" stroke="#1F2236" stroke-width="3" stroke-dasharray="6 5"/><rect x="138" y="54" width="36" height="76" fill="#EC5E81"/></svg></div>
+        <p>Projetos em andamento incluem a implantação de Centro de Inovação, Instituto de Ciência e Tecnologia e Parques Tecnológicos.</p>
+      </article>
+      <article class="wcard" style="--i:3;--bg:var(--sky);--fg:var(--ink)">
+        <span class="tag">Diferencial · localização</span>
+        <div class="wc-head"><h3>Localização estratégica</h3><svg viewBox="0 0 180 130" aria-hidden="true"><g fill="none" stroke="#1F2236" stroke-width="2" opacity=".5"><circle cx="90" cy="65" r="30"/><circle cx="90" cy="65" r="56" stroke-dasharray="4 5"/></g><g stroke="#1F2236" stroke-width="3"><path d="M90 65L22 18M90 65l70-38M90 65l-58 58M90 65l66 50"/></g><rect x="78" y="53" width="24" height="24" fill="#FFC400" stroke="#1F2236" stroke-width="3"/><g fill="#fff" stroke="#1F2236" stroke-width="2.5"><rect x="14" y="10" width="16" height="16"/><rect x="152" y="19" width="16" height="16"/><rect x="24" y="115" width="16" height="16"/><rect x="148" y="107" width="16" height="16"/></g></svg></div>
+        <p>Inserido na Região Metropolitana do Recife, Paulista possui conexão estratégica com outros polos de inovação, empresas e fundos de investimento de Pernambuco.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. COMO ATUA -->
+<section class="how" id="como-atua" data-sec>
+  <div class="how-pin" id="howPin">
+    <div class="how-halo" id="howHalo"></div>
+    <div class="how-bg" id="howBg"></div>
+    <div class="how-track" id="howTrack">
+      <svg class="how-thread" id="howThread" aria-hidden="true"></svg>
+      <div class="how-intro">
+        <span class="eyebrow" style="color:var(--yellow)">Como o Paulistear atua</span>
+        <h2>Conectando oportunidades. <span>Gerando resultados.</span></h2>
+        <p>O Paulistear atua em diferentes frentes para fortalecer o ecossistema de inovação de Paulista.</p>
+        <span class="hint">6 eixos estratégicos <svg width="40" height="10" viewBox="0 0 40 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 5h38M33 1l5 4-5 4"/></svg></span>
+      </div>
+      <article class="axis up" style="--c:var(--yellow)"><span class="knot"></span><div class="half"><span class="n">01</span><h3>Ambientes de inovação</h3><p>Estruturar e ativar ambientes de inovação no território.</p><div class="pr"><b>Na prática</b><span>Coworkings</span><span>Espaços makers</span><span>Laboratórios</span><span>Centros de inovação</span></div></div><div class="half"></div></article>
+      <article class="axis dn" style="--c:var(--green)"><span class="knot"></span><div class="half"><span class="n">02</span><h3>Programas &amp; ações</h3><p>Criar oportunidades para desenvolver ideias, negócios e soluções.</p><div class="pr"><b>Na prática</b><span>Ideathons</span><span>Hackathons</span><span>Editais</span><span>Empreendedorismo</span><span>Acompanhamento de negócios</span></div></div><div class="half"></div></article>
+      <article class="axis up" style="--c:var(--sky)"><span class="knot"></span><div class="half"><span class="n">03</span><h3>Integração ICTs + demanda</h3><p>Conectar conhecimento acadêmico aos desafios reais das empresas.</p><div class="pr"><b>Na prática</b><span>Projetos de extensão</span><span>Pesquisa aplicada</span><span>Banco de desafios tecnológicos</span></div></div><div class="half"></div></article>
+      <article class="axis dn" style="--c:var(--purple)"><span class="knot"></span><div class="half"><span class="n">04</span><h3>Políticas públicas</h3><p>Facilitar o acesso às políticas e mecanismos de apoio à inovação.</p><div class="pr"><b>Na prática</b><span>Legislação</span><span>Incentivos</span><span>Desburocratização</span><span>Benefícios para empresas</span></div></div><div class="half"></div></article>
+      <article class="axis up" style="--c:var(--pink)"><span class="knot"></span><div class="half"><span class="n">05</span><h3>Atração de capital</h3><p>Aproximar negócios e projetos de fontes de financiamento.</p><div class="pr"><b>Na prática</b><span>Fundos de investimento</span><span>Editais de fomento</span><span>Oportunidades de captação</span></div></div><div class="half"></div></article>
+      <article class="axis dn" style="--c:#8FA0FF"><span class="knot"></span><div class="half"><span class="n">06</span><h3>Governança &amp; comunicação</h3><p>Fortalecer a governança e manter o ecossistema conectado.</p><div class="pr"><b>Na prática</b><span>Comitê da Quádrupla Hélice</span><span>Comunicação contínua de oportunidades</span></div></div><div class="half"></div></article>
+      <div class="how-end"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. SEU PAPEL -->
+<section class="sec roles" id="seu-papel" data-sec>
+  <div class="roles-head">
+    <div>
+      <span class="eyebrow" style="color:var(--purple)">Encontre seu caminho</span>
+      <h2 style="margin-top:14px">Qual é o seu <em>papel</em> no ecossistema?</h2>
+    </div>
+    <p>O Paulistear conecta diferentes perfis a oportunidades de inovação, negócios, conhecimento e investimento.</p>
+  </div>
+  <div class="acc" id="acc">
+    <article class="acc-item on" style="--c:var(--purple)">
+      <button class="acc-tab" aria-expanded="true"><span class="g">A</span><span class="v">Startups e empreendedores</span><span class="g">+</span></button>
+      <div class="acc-body">
+        <svg class="glyph" viewBox="0 0 100 100" aria-hidden="true"><rect x="47" y="0" width="6" height="11" fill="#5DAAE7"/><rect x="2" y="37" width="11" height="6" fill="#A7BA2E"/><rect x="87" y="37" width="11" height="6" fill="#A7BA2E"/><rect x="16" y="8" width="6" height="11" fill="#5DAAE7" transform="rotate(-45 19 13.5)"/><rect x="78" y="8" width="6" height="11" fill="#5DAAE7" transform="rotate(45 81 13.5)"/><path d="M50 16a24 24 0 0 1 14 43.5V70H36V59.5A24 24 0 0 1 50 16z" fill="#FFC400"/><rect x="42" y="27" width="6" height="16" fill="#fff" opacity=".7"/><rect x="36" y="74" width="28" height="7" fill="#fff"/><rect x="38" y="84" width="24" height="7" fill="#EC5E81"/><rect x="44" y="94" width="12" height="6" fill="#fff"/></svg>
+        <span class="who">Perfil · Startups e empreendedores</span>
+        <h3>Da ideia ao desafio real</h3>
+        <p>Mentorias, incubação, espaços makers e conexão com desafios reais de empresas.</p>
+        <button class="btn" data-go="startup">Inscreva sua startup <span class="arr">→</span></button>
+      </div>
+    </article>
+    <article class="acc-item" style="--c:var(--sky);--t:var(--ink)">
+      <button class="acc-tab" aria-expanded="false"><span class="g">B</span><span class="v">Empresas e indústrias</span><span class="g">+</span></button>
+      <div class="acc-body">
+        <svg class="glyph" viewBox="0 0 100 100" aria-hidden="true"><path d="M0 100V50l25 16V50l25 16V50l25 16V10h25v90z" fill="#2041B4"/></svg>
+        <span class="who">Perfil · Empresas e indústrias</span>
+        <h3>Inovação aberta na prática</h3>
+        <p>Conexão com inovação aberta, soluções para gargalos operacionais e parcerias com instituições de ciência e tecnologia.</p>
+        <button class="btn" data-go="empresa">Seja uma empresa parceira <span class="arr">→</span></button>
+      </div>
+    </article>
+    <article class="acc-item" style="--c:var(--pink)">
+      <button class="acc-tab" aria-expanded="false"><span class="g">C</span><span class="v">Academia, professores e alunos</span><span class="g">+</span></button>
+      <div class="acc-body">
+        <svg class="glyph" viewBox="0 0 100 100" aria-hidden="true"><rect x="0" y="76" width="90" height="16" fill="#FFC400"/><rect x="10" y="54" width="80" height="16" fill="#fff"/><rect x="0" y="32" width="84" height="16" fill="#903FE1"/><rect x="14" y="10" width="72" height="16" fill="#A7BA2E"/></svg>
+        <span class="who">Perfil · Academia</span>
+        <h3>Pesquisa com endereço</h3>
+        <p>Oportunidades para aplicar pesquisas e projetos em desafios reais do território.</p>
+        <button class="btn" data-go="academia">Conecte seu projeto/laboratório <span class="arr">→</span></button>
+      </div>
+    </article>
+    <article class="acc-item" style="--c:var(--blue)">
+      <button class="acc-tab" aria-expanded="false"><span class="g">D</span><span class="v">Investidores e mentores</span><span class="g">+</span></button>
+      <div class="acc-body">
+        <svg class="glyph" viewBox="0 0 100 100" aria-hidden="true"><rect x="0" y="70" width="18" height="30" fill="#5DAAE7"/><rect x="27" y="50" width="18" height="50" fill="#A7BA2E"/><rect x="54" y="28" width="18" height="72" fill="#FFC400"/><rect x="81" y="0" width="18" height="100" fill="#EC5E81"/></svg>
+        <span class="who">Perfil · Investidores e mentores</span>
+        <h3>Acesso ao que está nascendo</h3>
+        <p>Acesso a oportunidades, startups e projetos do ecossistema, além da possibilidade de participar da rede de inovação.</p>
+        <button class="btn" data-go="investidor">Junte-se à rede de mentores/investidores <span class="arr">→</span></button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 6. MAPA -->
+<section class="sec map" id="mapa" data-sec>
+  <div class="map-head">
+    <div>
+      <span class="eyebrow" style="color:var(--blue)">Mapa do ecossistema</span>
+      <h2>Explore o ecossistema de inovação de Paulista</h2>
+    </div>
+    <p>Conheça os espaços, instituições e organizações que fazem parte do ecossistema de inovação de Paulista. Clique nos pontos para conhecer cada ativo.</p>
+  </div>
+  <div class="chips" id="mapChips"></div>
+  <div class="map-wrap" id="mapWrap">
+    <div class="map-canvas">
+      <svg viewBox="0 0 800 560" id="mapSvg" role="img" aria-label="Mapa ilustrativo de Paulista com pontos do ecossistema de inovação">
+        <defs>
+          <pattern id="waves" width="40" height="16" patternUnits="userSpaceOnUse"><path d="M0 8c10-8 10 8 20 0s10 8 20 0" fill="none" stroke="#B9D6F2" stroke-width="1.5"/></pattern>
+          <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#F3F4F9"/><line x1="0" y1="0" x2="0" y2="8" stroke="#E4E6F0" stroke-width="3"/></pattern>
+        </defs>
+        <rect width="800" height="560" fill="url(#hatch)"/>
+        <path d="M596 0 C586 70 566 130 590 200 C612 262 588 330 606 392 C622 448 600 500 614 560 L800 560 L800 0Z" fill="#DCEBFA"/>
+        <path d="M596 0 C586 70 566 130 590 200 C612 262 588 330 606 392 C622 448 600 500 614 560 L800 560 L800 0Z" fill="url(#waves)" opacity=".7"/>
+        <path d="M62 40 C150 26 250 46 340 30 C430 16 520 34 588 26 C580 80 568 136 590 200 C612 262 588 330 606 392 C618 440 604 490 610 526 C520 536 420 520 330 530 C240 540 150 526 70 530 C44 460 64 400 46 330 C30 260 70 190 50 120 C44 90 54 64 62 40Z" fill="#fff" stroke="#1F2236" stroke-width="2" stroke-dasharray="7 6"/>
+        <path d="M60 300 C160 280 240 330 330 300 S500 250 596 262" fill="none" stroke="#E7E9F3" stroke-width="12" stroke-linecap="round"/>
+        <path d="M300 30 C290 140 350 220 320 320 S300 460 330 530" fill="none" stroke="#E7E9F3" stroke-width="12" stroke-linecap="round"/>
+        <path d="M140 60 C170 150 150 230 210 300 S260 430 250 528" fill="none" stroke="#E7E9F3" stroke-width="8" stroke-linecap="round"/>
+        <path d="M90 470 C170 440 260 470 350 430 S520 440 604 440" fill="none" stroke="#CFE3F7" stroke-width="5" stroke-linecap="round"/>
+        <text class="lbl b" x="705" y="300" text-anchor="middle" transform="rotate(90 705 300)">Oceano Atlântico</text>
+        <text class="lbl" x="560" y="70" text-anchor="end">Maria Farinha</text>
+        <text class="lbl" x="572" y="220" text-anchor="end">Pau Amarelo</text>
+        <text class="lbl" x="582" y="420" text-anchor="end">Janga</text>
+        <text class="lbl" x="360" y="270">Centro</text>
+        <text class="lbl" x="120" y="250">Mirueira</text>
+        <text class="lbl" x="170" y="400">Paratibe</text>
+        <text class="lbl" x="150" y="96">Arthur Lundgren</text>
+        <text class="lbl" x="400" y="500">Maranguape</text>
+        <text class="lbl" x="300" y="18" text-anchor="middle">↑ Igarassu</text>
+        <text class="lbl" x="330" y="552" text-anchor="middle">↓ Olinda · Recife</text>
+        <text class="lbl" x="14" y="300" transform="rotate(-90 14 300)" text-anchor="middle">← Abreu e Lima</text>
+        <g id="pins"></g>
+      </svg>
+    </div>
+    <aside class="map-panel" id="mapPanel" aria-live="polite"></aside>
+  </div>
+</section>
+
+<!-- 7. OPORTUNIDADES -->
+<section class="sec opps" id="oportunidades" data-sec>
+  <div class="opps-head">
+    <div>
+      <span class="eyebrow" style="color:var(--pink)">Agenda do ecossistema</span>
+      <h2>Oportunidades para fazer parte</h2>
+    </div>
+    <p class="stamp" id="stamp">Painel atualizado<br>—</p>
+  </div>
+  <div class="tabs" id="oppTabs" role="tablist" aria-label="Filtrar oportunidades"></div>
+  <div class="board">
+    <table>
+      <thead><tr><th>Tipo</th><th>Oportunidade</th><th>Data</th><th>Status</th></tr></thead>
+      <tbody id="oppBody"></tbody>
+    </table>
+  </div>
+  <div class="opps-foot">
+    <small id="oppsNote">Oportunidades ilustrativas · serão substituídas pela agenda oficial</small>
+  </div>
+</section>
+
+<!-- 8. FORMULÁRIO -->
+<section class="sec join" id="conecte" data-sec>
+  <div class="join-grid">
+    <div class="join-intro">
+      <span class="eyebrow" style="color:var(--yellow)">Conecte-se ao Paulistear</span>
+      <h2>Faça parte do ecossistema</h2>
+      <p>Quer participar, desenvolver um projeto, apresentar um desafio, buscar parceiros ou conhecer oportunidades de inovação em Paulista?</p>
+      <p>Cadastre-se e conecte-se à rede.</p>
+      <div class="route" aria-live="polite">
+        <h4><span>Encaminhamento inteligente</span><span id="routeTag">aguardando perfil</span></h4>
+        <svg viewBox="0 0 460 250" id="routeSvg" aria-hidden="true"></svg>
+        <p class="route-out" id="routeOut">Escolha seu perfil e interesse: mostramos para qual área da equipe seu cadastro será enviado.</p>
+      </div>
+    </div>
+    <div class="join-card" id="joinCard">
+      <form id="joinForm" novalidate>
+        <div class="fgrid">
+          <div class="field"><label for="f-nome">Nome</label><input type="text" id="f-nome" autocomplete="name" placeholder="Seu nome completo"><span class="msg"></span></div>
+          <div class="field"><label for="f-email">E-mail</label><input type="email" id="f-email" autocomplete="email" placeholder="voce@exemplo.com"><span class="msg"></span></div>
+          <div class="field"><label for="f-tel">Telefone</label><input type="tel" id="f-tel" autocomplete="tel" placeholder="(81) 90000-0000"><span class="msg"></span></div>
+          <div class="field"><label for="f-org">Organização</label><input type="text" id="f-org" autocomplete="organization" placeholder="Empresa, instituição ou projeto"><span class="msg"></span></div>
+          <fieldset class="field full" id="fs-perfil"><legend>Perfil</legend><div class="opts" id="optPerfil"></div><span class="msg"></span></fieldset>
+          <fieldset class="field full" id="fs-int"><legend>Interesse</legend><div class="opts" id="optInt"></div><span class="msg"></span></fieldset>
+        </div>
+        <button class="btn" type="submit">Quero fazer parte da rede <span class="arr">→</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- 9. RECURSOS -->
+<section class="sec res" id="recursos" data-sec>
+  <div class="res-grid">
+    <div class="book-wrap" id="bookWrap">
+      <div class="book" id="book">
+        <div class="pages"></div>
+        <div class="cover">
+          <div class="bars"><i style="--c:var(--yellow);--l:70%"></i><i style="--c:var(--green);--l:88%"></i><i style="--c:var(--pink);--l:100%"></i><i style="--c:var(--sky);--l:40%"></i></div>
+          <div class="t"><small>Cartilha</small>Captação de Recursos</div>
+          <span class="wm" role="img" aria-label="Paulistear"></span>
+        </div>
+      </div>
+    </div>
+    <div class="res-copy">
+      <span class="eyebrow">Recursos e investimento</span>
+      <h2>Encontre recursos para transformar ideias em projetos</h2>
+      <p>Acesse informações sobre fontes de financiamento, editais de fomento e oportunidades de investimento para negócios e projetos de inovação.</p>
+      <ul class="res-list">
+        <li><b>Fundos de investimento</b><span>Capital para escalar negócios inovadores</span><i>→</i></li>
+        <li><b>Editais de fomento</b><span>Recursos públicos para pesquisa e inovação</span><i>→</i></li>
+        <li><b>Oportunidades de captação</b><span>Rodadas, prêmios e programas de apoio</span><i>→</i></li>
+      </ul>
+      <div class="res-ctas">
+        <a class="btn ink" href="#recursos">Acessar guia de recursos <span class="arr">→</span></a>
+        <a class="btn ghost" href="#recursos" style="color:var(--ink)">Cartilha de captação (PDF) <span class="soon">em breve</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. GOVERNANÇA -->
+<section class="sec gov" id="governanca" data-sec>
+  <div class="gov-grid">
+    <div class="gov-copy">
+      <span class="eyebrow" style="color:var(--blue)">Governança</span>
+      <h2>Uma rede construída em conjunto</h2>
+      <p class="gov-lede">O Paulistear conecta os diferentes atores da Quádrupla Hélice para fortalecer a governança e construir soluções colaborativas para o desenvolvimento de Paulista.</p>
+      <dl class="gov-figs">
+        <div><dt>4</dt><dd>hélices representadas</dd></div>
+        <div><dt>1</dt><dd>comitê de governança</dd></div>
+        <div><dt>6</dt><dd>eixos estratégicos</dd></div>
+      </dl>
+      <div class="actors" id="actors">
+        <article class="actor" data-k="0" style="--c:var(--yellow)"><h3>Governo</h3><p>Articula políticas públicas, incentivos e desburocratização para quem inova.</p><span>Comitê · assentos a definir</span></article>
+        <article class="actor" data-k="1" style="--c:var(--pink)"><h3>Academia</h3><p>Produz conhecimento, pesquisa aplicada e forma os talentos do território.</p><span>Comitê · assentos a definir</span></article>
+        <article class="actor" data-k="2" style="--c:var(--sky)"><h3>Empresas</h3><p>Traz demandas reais, investimento e espaço para inovação aberta.</p><span>Comitê · assentos a definir</span></article>
+        <article class="actor" data-k="3" style="--c:var(--green)"><h3>Sociedade civil</h3><p>Aponta os desafios da cidade e participa da construção das soluções.</p><span>Comitê · assentos a definir</span></article>
+      </div>
+    </div>
+    <div class="gov-visual">
+      <div class="ring" id="ring">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          
+          <line class="edge flow" style="--c:var(--yellow)" x1="18" y1="18" x2="82" y2="18"/>
+          <line class="edge flow rev" style="--c:var(--pink)" x1="82" y1="18" x2="82" y2="82"/>
+          <line class="edge flow" style="--c:var(--sky)" x1="82" y1="82" x2="18" y2="82"/>
+          <line class="edge flow rev" style="--c:var(--green)" x1="18" y1="82" x2="18" y2="18"/>
+        </svg>
+        <div class="node" id="nGov" style="left:18%;top:18%"><button data-k="0" style="--c:var(--yellow);--t:var(--ink)">Governo</button></div>
+        <div class="node" id="nAca" style="left:82%;top:18%"><button data-k="1" style="--c:var(--pink)">Academia</button></div>
+        <div class="node" id="nEmp" style="left:82%;top:82%"><button data-k="2" style="--c:var(--sky);--t:var(--ink)">Empresas</button></div>
+        <div class="node" id="nSoc" style="left:18%;top:82%"><button data-k="3" style="--c:var(--green);--t:var(--ink)">Sociedade civil</button></div>
+        <div class="core" id="core"><p><b>Comitê da Quádrupla Hélice</b>Integrantes em breve. Selecione um ator para ver seu papel.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. NEWSLETTER -->
+<section class="sec news" id="novidades" data-sec>
+  <div class="news-card">
+    <div>
+      <span class="eyebrow" style="color:var(--pink)">Newsletter</span>
+      <h2 style="margin-top:14px">Fique conectado às novidades do ecossistema</h2>
+      <p>Receba novidades sobre eventos, programas, editais, oportunidades e iniciativas de inovação em Paulista.</p>
+    </div>
+    <form class="nl-form" id="nlForm" novalidate>
+      <div class="nl-row">
+        <div class="nl-field"><label for="nl-email">Seu melhor e-mail</label><input type="email" id="nl-email" placeholder="voce@exemplo.com" autocomplete="email"><span class="thread" id="nlThread"></span></div>
+        <button class="btn pink" type="submit">Quero receber <span class="arr">→</span></button>
+      </div>
+      <p class="nl-msg" id="nlMsg"></p>
+    </form>
+  </div>
+</section>
+
+<!-- 12. RODAPÉ -->
+<footer class="sec foot" id="contato" data-sec>
+  <div class="foot-grid">
+    <div class="foot-space" id="fmark"></div>
+    <div class="foot-main">
+      <div>
+        <span class="wm" role="img" aria-label="Paulistear"></span>
+        <p class="sub">Hub de Inovação de Paulista — PE<span>Núcleo de Inovação · Quádrupla Hélice</span></p>
+      </div>
+      <nav aria-label="Rodapé">
+        <h4>Navegue</h4>
+        <ul>
+          <li><a href="#o-que-e">O Paulistear</a></li>
+          <li><a href="#mapa">Ecossistema</a></li>
+          <li><a href="#oportunidades">Oportunidades</a></li>
+          <li><a href="#como-atua">Programas</a></li>
+          <li><a href="#seu-papel" data-open="1">Empresas</a></li>
+          <li><a href="#seu-papel" data-open="0">Startups</a></li>
+          <li><a href="#seu-papel" data-open="3">Investidores</a></li>
+          <li><a href="#conecte">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Paulistear · Núcleo de Inovação de Paulista</span>
+      <button id="toTop">Voltar ao topo ↑</button>
+    </div>
+  </div>
+</footer>
+
+</main>
+<script src="script.js"></script>
+</body>
+</html>
