@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Agenda · Paulistear</title>
+<meta name="description" content="Agenda do ecossistema de inovação de Paulista: eventos, editais, desafios, programas e oportunidades de investimento.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Quicksand:wght@400;500;600;700&family=Urbanist:wght@600;700;800;900&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="agenda">
+<a class="skip" href="#main">Pular para o conteúdo</a>
+<header class="nav" id="nav"></header>
+
+<main id="main">
+
+<!-- OPORTUNIDADES PARA FAZER PARTE -->
+<section class="t-purple page-head tex-croche tex-verde">
+  <div class="bands" aria-hidden="true"><i style="--c:var(--sky);--h:78%"></i><i style="--c:var(--yellow);--h:46%"></i><i style="--c:var(--green);--h:90%"></i><i style="--c:var(--pink);--h:58%"></i></div>
+  <div class="wrap">
+    <h1>Oportunidades para fazer parte</h1>
+    <span class="mono" id="stamp">Painel atualizado</span>
+  </div>
+</section>
+
+<section class="sec white" id="agenda">
+  <div class="wrap">
+    <h2 id="agNextTitle">Próximo na agenda</h2>
+    <div class="ag-next" id="agNext"></div>
+
+    <div class="ag-tools">
+      <h2>Agenda completa</h2>
+      <div class="chips" id="agTabs" role="group" aria-label="Filtrar por tipo"></div>
+    </div>
+    <div id="agList" aria-live="polite"></div>
+
+    <details class="ag-past" id="agPast">
+      <summary>Encerradas</summary>
+      <ul class="ag-list"></ul>
+    </details>
+
+    <p class="ag-foot mono">Oportunidades ilustrativas · serão substituídas pela agenda oficial</p>
+  </div>
+</section>
+
+<!-- DIVULGAR -->
+<section class="sec light" id="divulgar">
+  <div class="wrap callout">
+    <p><b>A agenda é aberta a todas as hélices.</b> Tem um edital, desafio, evento ou programa? Divulgue para o ecossistema.</p>
+    <a class="btn" href="faca-parte.html?interesse=divulgar#conecte">Divulgar uma oportunidade →</a>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="sec brand" id="novidades">
+  <div class="wrap news-grid">
+    <div>
+      <h2>Fique conectado às novidades do ecossistema</h2>
+      <p class="lead">Receba novidades sobre eventos, programas, editais, oportunidades e iniciativas de inovação em Paulista.</p>
+    </div>
+    <form id="nlForm" novalidate>
+      <div class="nl-row">
+        <div class="nl-field"><label for="nl-email">Seu melhor e-mail</label><input class="input" type="email" id="nl-email" placeholder="voce@exemplo.com" autocomplete="email"></div>
+        <button class="btn" type="submit">Quero receber →</button>
+      </div>
+      <p class="nl-msg" id="nlMsg" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<!-- FECHAMENTO -->
+<section class="t-sky closing tex">
+  <div class="wrap">
+    <h2>Conheça quem faz a inovação <em>em Paulista.</em></h2>
+    <div class="btns">
+      <a class="btn" href="faca-parte.html">Faça parte</a>
+      <a class="btn alt" href="ecossistema.html" aria-label="Próxima página: Ecossistema">Próxima página →</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<div id="site-footer"></div>
+<script src="script.js"></script>
+</body>
+</html>

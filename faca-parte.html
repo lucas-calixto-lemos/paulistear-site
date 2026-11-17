@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Faça parte · Paulistear</title>
+<meta name="description" content="Encontre seu papel no ecossistema de inovação de Paulista e cadastre-se para fazer parte da rede do Paulistear.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Quicksand:wght@400;500;600;700&family=Urbanist:wght@600;700;800;900&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="faca-parte">
+<a class="skip" href="#main">Pular para o conteúdo</a>
+<header class="nav" id="nav"></header>
+
+<main id="main">
+
+<!-- LOGOTIPO (sai da barra e cresce aqui) -->
+<section class="fp-hero" id="fpHero" aria-label="Paulistear"><div class="fp-logo" id="fpLogo" role="img" aria-label="Paulistear"></div></section>
+
+<!-- FORMULÁRIO -->
+<section class="sec white join-sec" id="conecte">
+  <div class="wrap join-grid">
+    <div class="join-intro">
+      <h2>Faça parte do ecossistema</h2>
+      <p>Quer participar, desenvolver um projeto, apresentar um desafio, divulgar um edital, buscar parceiros ou conhecer oportunidades de inovação em Paulista?</p>
+      <p>Cadastre-se e conecte-se à rede.</p>
+    </div>
+    <div class="join-card brand" id="joinCard">
+      <form id="joinForm" novalidate>
+        <div class="fgrid">
+          <div class="field"><label for="f-nome">Nome</label><input class="input" type="text" id="f-nome" autocomplete="name" placeholder="Seu nome completo"><span class="msg" aria-live="polite"></span></div>
+          <div class="field"><label for="f-email">E-mail</label><input class="input" type="email" id="f-email" autocomplete="email" placeholder="voce@exemplo.com"><span class="msg" aria-live="polite"></span></div>
+          <div class="field"><label for="f-tel">Telefone</label><input class="input" type="tel" id="f-tel" autocomplete="tel" placeholder="(81) 90000-0000"><span class="msg"></span></div>
+          <div class="field"><label for="f-org">Organização</label><input class="input" type="text" id="f-org" autocomplete="organization" placeholder="Empresa, instituição ou projeto"><span class="msg"></span></div>
+          <fieldset class="field full"><legend>Perfil</legend><div class="opts" id="optPerfil"></div><span class="msg" aria-live="polite"></span></fieldset>
+          <fieldset class="field full"><legend>Interesse</legend><div class="opts" id="optInt"></div><span class="msg" aria-live="polite"></span></fieldset>
+        </div>
+        <button class="btn" type="submit">Quero fazer parte da rede →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+<div id="site-footer"></div>
+<script src="script.js"></script>
+</body>
+</html>
