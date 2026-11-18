@@ -338,8 +338,10 @@ if ($('#joinForm')){
    ROLAGEM · suave na roda do mouse, parallax da foto e fitas do hero
    ===================================================================== */
 const heroBg = $('#heroBg'), weave = $('#weave');
+// se o navegador faz o parallax sozinho (animações ligadas à rolagem, ver styles.css v10.1), o JS fica de fora
+const PX_CSS = !!(window.CSS && CSS.supports('animation-timeline: scroll()'));
 function heroFx(){
-  if (!weave || RM) return;
+  if (!weave || RM || PX_CSS) return;
   const y = scrollY;
   if (y > innerHeight * 1.3) return;              // fora da tela: nada a atualizar
   heroBg.style.transform = `translate3d(0,${(y * .28).toFixed(1)}px,0)`;
@@ -407,7 +409,7 @@ function missaoFx(){
 // (vale para todo cabeçalho com foto: Como atua, Agenda e Ecossistema)
 const croche = $('.tex-croche');
 function crocheFx(){
-  if (!croche || RM) return;
+  if (!croche || RM || PX_CSS) return;
   const y = scrollY; if (y > croche.offsetHeight + 200) return;
   croche.style.setProperty('--py', (y * .28).toFixed(1) + 'px');
 }

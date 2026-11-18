@@ -967,3 +967,27 @@ body[data-page="faca-parte"]:not(.logo-out) .fp-logo .lockup{opacity:0}
   .hero .btn{margin-top:14px;min-height:46px}
   .hero{padding-block:var(--sp-4)}
 }
+
+/* =====================================================================
+   v10.1 · PARALLAX NO PRÓPRIO NAVEGADOR (animações ligadas à rolagem)
+   O movimento acompanha a rolagem quadro a quadro, sem esperar o JavaScript
+   (no celular o JS chega sempre um quadro atrasado e a foto "trava").
+   Navegadores sem esse recurso continuam usando o JS de antes.
+   Valores iguais aos do script: foto 0,28 · texto 0,42 · fitas 0,45 da rolagem, até 130% da altura da tela.
+   ===================================================================== */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-bg{animation:pxBg linear both;animation-timeline:scroll(root block);animation-range:0 130vh}
+    .hero .wrap{animation:pxText linear both;animation-timeline:scroll(root block);animation-range:0 130vh}
+    /* fitas: em vez de mexer na posição do fundo (que redesenha a cada quadro), a faixa inteira desliza */
+    .weave i{width:calc(100% + 400vw);margin-left:-200vw;will-change:transform}
+    .weave i:first-child{background-position-x:0;animation:pxWeaveA linear both;animation-timeline:scroll(root block);animation-range:0 130vh}
+    .weave i:last-child{background-position-x:-12.5vw;animation:pxWeaveB linear both;animation-timeline:scroll(root block);animation-range:0 130vh}
+    /* cabeçalhos com foto de tricô (Como atua, Agenda, Ecossistema) */
+    .tex-croche::before{animation:pxBg linear both;animation-timeline:scroll(root block);animation-range:0 130vh}
+  }
+}
+@keyframes pxBg{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,36.4vh,0)}}
+@keyframes pxText{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,54.6vh,0)}}
+@keyframes pxWeaveA{from{transform:translate3d(0,0,0)}to{transform:translate3d(58.5vh,0,0)}}
+@keyframes pxWeaveB{from{transform:translate3d(0,0,0)}to{transform:translate3d(-58.5vh,0,0)}}
