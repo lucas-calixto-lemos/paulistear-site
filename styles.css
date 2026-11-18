@@ -136,7 +136,7 @@ p{text-wrap:pretty}
 }
 
 /* ---------- INÍCIO · hero ---------- */
-.hero{position:relative;min-height:calc(100vh - var(--nav-h));min-height:calc(100svh - var(--nav-h));display:flex;flex-direction:column;justify-content:center;padding-block:var(--sp-7) var(--sp-7);background:linear-gradient(180deg,rgba(24,18,150,.7) 0%,rgba(48,108,190,.7) 100%),url(assets/praca-matriz.jpg) center 42%/cover #2E50C8}
+.hero{position:relative;min-height:calc(100vh - var(--nav-h));min-height:calc(100svh - var(--nav-h));display:flex;flex-direction:column;justify-content:center;padding-block:var(--sp-7) var(--sp-7);background:linear-gradient(180deg,rgba(24,18,150,.7) 0%,rgba(48,108,190,.7) 100%),url(assets/praca-matriz.webp) center 42%/cover #2E50C8}
 .tagline{font:500 clamp(1.75rem, 4.1vw, 3.5rem)/1.16 var(--f-body);letter-spacing:-.01em;max-width:21ch;text-wrap:balance}
 .tagline b{font:800 1.06em/1 var(--f-display);letter-spacing:-.01em}
 .hero .btn{margin-top:var(--sp-5);min-height:56px;padding-inline:28px;font-size:1.0625rem}
@@ -166,7 +166,7 @@ p{text-wrap:pretty}
 .why-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--sp-5) var(--sp-6);align-items:start}
 .why-side p{margin-top:var(--sp-3);color:var(--muted);font-size:var(--fs-lead);line-height:1.55}
 .why-photo{margin-top:var(--sp-4)}
-.why-photo .ph{aspect-ratio:16/10;border-radius:var(--r-card);background:url(assets/paulista.jpg) center/cover}
+.why-photo .ph{aspect-ratio:16/10;border-radius:var(--r-card);background:url(assets/paulista.webp) center/cover}
 .why-photo figcaption{margin-top:12px;font:500 .8125rem/1.5 var(--f-mono);color:var(--muted)}
 .why-photo figcaption b{color:var(--ink);font-weight:500;margin-right:.8em}
 .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sp-2)}
@@ -492,7 +492,7 @@ p{text-wrap:pretty}
 /* hero: foto com véu azul, conteúdo centralizado */
 .hero{min-height:calc(100vh - var(--nav-h) - var(--band) / 2);min-height:calc(100svh - var(--nav-h) - var(--band) / 2);align-items:center;text-align:center;overflow:hidden;background:#2E50C8;padding-block:var(--sp-6)}
 .hero::after{content:none}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,2,152,.43) 0%,rgba(0,133,255,.43) 100%),url(assets/praca-matriz.jpg) center 12%/cover;will-change:transform}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,2,152,.43) 0%,rgba(0,133,255,.43) 100%),url(assets/praca-matriz.webp) center 12%/cover;will-change:transform}
 .hero .wrap{position:relative;display:flex;flex-direction:column;align-items:center;margin-top:-4vh}
 .tagline{font:400 clamp(1.375rem,2.65vw,2.5rem)/1.04 var(--f-body);letter-spacing:0;max-width:23.5em;text-wrap:balance}
 .tagline b{font:800 1.68em/.8 var(--f-display);letter-spacing:-.01em;margin-left:.08em;vertical-align:-.12em}
@@ -525,7 +525,7 @@ p{text-wrap:pretty}
 /* v6.3 · foto e véu em camadas separadas: a foto ganha saturação, o véu segue a especificação (105°, #000298 → #0085ff, 43%) */
 .hero-bg{background:none}
 .hero-bg::before,.hero-bg::after{content:"";position:absolute;inset:0}
-.hero-bg::before{background:url(assets/praca-matriz.jpg) center 12%/cover;filter:saturate(1.45) contrast(1.08) brightness(1.03)}
+.hero-bg::before{background:url(assets/praca-matriz.webp) center 12%/cover;filter:saturate(1.45) contrast(1.08) brightness(1.03)}
 .hero-bg::after{background:linear-gradient(105deg,#000298 0%,#0085ff 100%);opacity:.43}
 
 /* v6.4 · logotipo maior, numa aba que desce da barra superior */
@@ -652,14 +652,14 @@ p{text-wrap:pretty}
 
 /* v7.5 · textura de papel amassado sobre a faixa de fechamento (modo multiplicar: mantém a cor, só marca os vincos) */
 .closing.tex{position:relative;isolation:isolate}
-.closing.tex::before{content:"";position:absolute;inset:0;z-index:0;background:url(assets/textura-papel.jpg) center/cover;mix-blend-mode:multiply;opacity:.75;pointer-events:none}
+.closing.tex::before{content:"";position:absolute;inset:0;z-index:0;background:url(assets/textura-papel.webp) center/cover;mix-blend-mode:multiply;opacity:.75;pointer-events:none}
 .closing.tex > .wrap{position:relative;z-index:1}
 /* foto de "Por que Paulista?": ampliada e ancorada à direita, para cortar as curvas coloridas do canto esquerdo */
 .why-photo .ph{background-size:120% auto;background-position:100% 45%}
 
 /* v7.6 · Como atua: foto de crochê como textura do cabeçalho azul, em opacidade baixa */
 .tex-croche{position:relative;isolation:isolate;overflow:hidden}
-.tex-croche::before{content:"";position:absolute;inset:0;z-index:0;background:url(assets/textura-croche.jpg) center/cover;opacity:.2;pointer-events:none}
+.tex-croche::before{content:"";position:absolute;inset:0;z-index:0;background:url(assets/textura-croche.webp) center/cover;opacity:.2;pointer-events:none}
 .tex-croche > .wrap{position:relative;z-index:1}
 .tex-croche > .bands{z-index:1}
 
@@ -681,8 +681,8 @@ p{text-wrap:pretty}
 .tex-croche::before{inset:-40% 0 0 0;transform:translate3d(0,var(--py),0);will-change:transform}
 
 /* v8.0 · fotos de tear nos cabeçalhos de Agenda e Ecossistema (mesma opacidade e parallax de Como atua) */
-.tex-verde::before{background-image:url(assets/textura-croche-3.jpg)}
-.tex-vermelho::before{background-image:url(assets/textura-croche-2.jpg)}
+.tex-verde::before{background-image:url(assets/textura-croche-3.webp)}
+.tex-vermelho::before{background-image:url(assets/textura-croche-2.webp)}
 
 
 /* =====================================================================
@@ -690,7 +690,7 @@ p{text-wrap:pretty}
    (o giro usa a propriedade "rotate", separada do "transform" da animação de entrada; só 4 elementos por página)
    ===================================================================== */
 .bands i{position:relative;rotate:var(--a,0deg);transform-origin:center top;box-shadow:3px 7px 12px rgba(12,16,56,.26)}
-.bands i::after{content:"";position:absolute;inset:0;background:url(assets/textura-papel.jpg) 0 0/520px auto;mix-blend-mode:multiply;opacity:.45;pointer-events:none}
+.bands i::after{content:"";position:absolute;inset:0;background:url(assets/textura-papel.webp) 0 0/520px auto;mix-blend-mode:multiply;opacity:.45;pointer-events:none}
 .bands i:nth-child(2)::after{background-position:-140px -60px}
 .bands i:nth-child(3)::after{background-position:-290px -210px}
 .bands i:nth-child(4)::after{background-position:-410px -120px}
@@ -710,7 +710,7 @@ p{text-wrap:pretty}
 .map-full::after{bottom:0;background:linear-gradient(0deg,rgba(19,23,61,.16),rgba(19,23,61,0))}
 .map-full .map-canvas{position:absolute;inset:0;border:0;border-radius:0;background:#E9ECF4}
 .map-full .map-canvas svg{display:block;width:100%;height:100%}
-.map-paper{position:absolute;inset:0;background:url(assets/textura-papel.jpg) center/cover;mix-blend-mode:multiply;opacity:.3;pointer-events:none}
+.map-paper{position:absolute;inset:0;background:url(assets/textura-papel.webp) center/cover;mix-blend-mode:multiply;opacity:.3;pointer-events:none}
 /* desenho do mapa: chapado, nas cores do site */
 #mapSvg .sea{fill:#8EC3EE}
 #mapSvg .city{fill:#fff;stroke:var(--ink);stroke-width:2;stroke-dasharray:8 6}
@@ -991,3 +991,6 @@ body[data-page="faca-parte"]:not(.logo-out) .fp-logo .lockup{opacity:0}
 @keyframes pxText{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,54.6vh,0)}}
 @keyframes pxWeaveA{from{transform:translate3d(0,0,0)}to{transform:translate3d(58.5vh,0,0)}}
 @keyframes pxWeaveB{from{transform:translate3d(0,0,0)}to{transform:translate3d(-58.5vh,0,0)}}
+
+/* v10.2 · desempenho: cada fita pendurada fica numa camada própria; o balanço vira só composição (sem redesenhar a página) */
+.bands i{will-change:rotate}

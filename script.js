@@ -22,16 +22,16 @@ const PAGES = [
 ];
 // Instituições que fazem parte do núcleo: [arquivo em assets/logos, nome, largura máx., altura máx.]
 const PARTNERS = [
-  ['prefeitura-secti.png', 'Prefeitura do Paulista · Secretaria Executiva de Ciência, Tecnologia e Inovação', 300, 62],
-  ['ifpe.png', 'Instituto Federal de Pernambuco · Campus Paulista', 200, 56],
-  ['senai.png', 'SENAI', 120, 34],
-  ['senac.png', 'Senac', 220, 44],
+  ['prefeitura-secti.webp', 'Prefeitura do Paulista · Secretaria Executiva de Ciência, Tecnologia e Inovação', 300, 62],
+  ['ifpe.webp', 'Instituto Federal de Pernambuco · Campus Paulista', 200, 56],
+  ['senai.webp', 'SENAI', 120, 34],
+  ['senac.webp', 'Senac', 220, 44],
   ['uninassau.svg', 'UNINASSAU', 190, 42],
-  ['fasup.png', 'Faculdade FASUP', 80, 78],
-  ['gente-inocente.png', 'Instituto Gente Inocente', 70, 82],
-  ['adventux.png', 'AdventuX', 100, 76],
-  ['codecrab.png', 'CodeCrab Community', 160, 80],
-  ['yc-saude.png', 'YC Saúde', 190, 66],
+  ['fasup.webp', 'Faculdade FASUP', 80, 78],
+  ['gente-inocente.webp', 'Instituto Gente Inocente', 70, 82],
+  ['adventux.webp', 'AdventuX', 100, 76],
+  ['codecrab.webp', 'CodeCrab Community', 160, 80],
+  ['yc-saude.webp', 'YC Saúde', 190, 66],
 ];
 const cur = k => k === PAGE ? ' aria-current="page"' : '';
 
@@ -49,7 +49,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classL
 
 $('#site-footer').innerHTML = `<section class="partners" aria-labelledby="partnersTitle"><div class="wrap">
     <h2 id="partnersTitle">Fazem parte do núcleo</h2>
-    <ul class="logos">${PARTNERS.map(([f, n, w, h]) => `<li><img src="assets/logos/${f}" alt="${esc(n)}" loading="lazy" style="--w:${w}px;--h:${h}px"></li>`).join('')}</ul>
+    <ul class="logos">${PARTNERS.map(([f, n, w, h]) => `<li><img src="assets/logos/${f}" alt="${esc(n)}" loading="lazy" decoding="async" style="--w:${w}px;--h:${h}px"></li>`).join('')}</ul>
   </div></section>
   <footer class="foot"><div class="wrap">
     <div class="foot-grid">
@@ -150,7 +150,7 @@ function drawFabric(lite){
 }
 // prepara a textura uma vez: cada ponto vira preto com transparência proporcional ao quanto o papel é escuro ali
 let texDark = null;
-if (fabricFig){ const im = new Image(); im.onload = () => { const c = document.createElement('canvas'); c.width = im.naturalWidth; c.height = im.naturalHeight; const x = c.getContext('2d'); x.drawImage(im, 0, 0); const d = x.getImageData(0, 0, c.width, c.height), p = d.data; for (let i = 0; i < p.length; i += 4){ p[i + 3] = (255 - p[i]) * .38; p[i] = p[i + 1] = p[i + 2] = 0; } x.putImageData(d, 0, 0); texDark = c; drawFabric(); }; im.src = 'assets/textura-papel.jpg'; }
+if (fabricFig){ const im = new Image(); im.onload = () => { const c = document.createElement('canvas'); c.width = im.naturalWidth; c.height = im.naturalHeight; const x = c.getContext('2d'); x.drawImage(im, 0, 0); const d = x.getImageData(0, 0, c.width, c.height), p = d.data; for (let i = 0; i < p.length; i += 4){ p[i + 3] = (255 - p[i]) * .38; p[i] = p[i + 1] = p[i + 2] = 0; } x.putImageData(d, 0, 0); texDark = c; drawFabric(); }; im.src = 'assets/textura-papel.webp'; }
 if (fabricFig){
   drawFabric();
   let fT; new ResizeObserver(() => { clearTimeout(fT); fT = setTimeout(() => drawFabric(), 120); }).observe(fabricFig);
@@ -418,7 +418,7 @@ crocheFx();
 // um "vento" fraco e contínuo as mantém balançando de leve; a rolagem dá um empurrão proporcional à velocidade.
 // o laço só roda enquanto o cabeçalho está na tela e para sozinho fora dela.
 const bandEls = $$('.page-head .bands i');
-let bandsRaf = 0, bandsLastY = scrollY, bandsT0 = performance.now(), bandsPrev = 0;
+let bandsFrame = 0, bandsRaf = 0, bandsLastY = scrollY, bandsT0 = performance.now(), bandsPrev = 0;
 const bandsState = bandEls.map((el, i) => ({ el, a:0, v:0, ph:i * 1.7 + .4, f:.55 + i * .13 }));
 const bandsHead = bandEls.length ? bandEls[0].closest('.page-head') : null;
 // medidas lidas só ao abrir e ao redimensionar (ler o layout a cada quadro custaria caro)
@@ -432,6 +432,8 @@ function bandsStep(t){
   const dt = Math.min(.05, bandsPrev ? (t - bandsPrev) / 1000 : .016); bandsPrev = t;
   const y = scrollY, dy = y - bandsLastY; bandsLastY = y;
   const tt = (t - bandsT0) / 1000;
+  // em telas estreitas as fitas são pequenas: o balanço é aplicado a cada 2 quadros (~30 por segundo), metade do trabalho
+  const draw = innerWidth > 980 || (bandsFrame = (bandsFrame + 1) % 2) === 0;
   bandsState.forEach(b => {
     const L = b.L;                                             // fitas mais longas balançam mais devagar
     const k = 9 / L, c = 1.6;                                  // rigidez e amortecimento
@@ -440,7 +442,9 @@ function bandsStep(t){
     b.v -= dy * .08 / L;                                       // empurrão da rolagem
     b.a += b.v * dt;
     b.a = Math.max(-6, Math.min(6, b.a));
-    b.el.style.setProperty('--a', b.a.toFixed(2) + 'deg');
+    // gira a fita direto (sem variável CSS herdada) e só quando o ângulo muda de fato: menos trabalho por quadro
+    if (!draw) return;
+    const s = b.a.toFixed(2); if (s !== b.s){ b.s = s; b.el.style.rotate = s + 'deg'; }
   });
   bandsRaf = requestAnimationFrame(bandsStep);
 }
