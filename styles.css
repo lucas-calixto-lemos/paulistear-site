@@ -851,3 +851,119 @@ body[data-page="faca-parte"] .nav-logo{transition:background-color .9s,box-shado
 
 /* durante o voo de entrada o logotipo grande passa por cima da barra */
 body.logo-flying .fp-logo .lockup{z-index:60}
+
+/* =====================================================================
+   v9 · BARRA SEM ABA: no topo da página a barra inteira (altura, logotipo e links) é um pouco maior;
+   ao rolar, encolhe aos poucos até o tamanho compacto (--k vai de 0 a 1, definido no script)
+   ===================================================================== */
+.nav{--grow:10px;--lg:46px;--sm:40px;--fs-big:1.125rem;--fs-sm:1.0625rem;--bar:calc(var(--nav-h) + var(--grow) * (1 - var(--k)));height:var(--bar)}
+.nav-logo,body[data-page="faca-parte"] .nav-logo{position:static;height:auto;padding:0;background:none;border-radius:0;display:flex;align-items:center}
+.nav-logo .lockup{height:calc(var(--lg) - (var(--lg) - var(--sm)) * var(--k));transform:none}
+.nav-links a,.nav .nav-cta{height:var(--bar);font-size:calc(var(--fs-sm) + (var(--fs-big) - var(--fs-sm)) * (1 - var(--k)))}
+@media (max-width:900px){
+  .nav{--grow:6px;--lg:42px;--sm:38px}
+  .nav.open .nav-logo{height:auto}
+  .nav.open .nav-logo .lockup{height:calc(var(--lg) - (var(--lg) - var(--sm)) * var(--k))}
+  .nav-links a,.nav .nav-cta{height:50px;font-size:1.0625rem}
+}
+
+/* v9.1 · cores do hover dos botões das faixas: nenhuma repete a cor da faixa nem a do botão ao lado.
+   A cor do preenchimento (--fill) fica definida também em repouso, para que, ao tirar o mouse,
+   o preenchimento saia na mesma cor em que entrou (sem restos de outra cor) */
+.t-purple.closing .btn.alt{--fill:var(--yellow);--hc:var(--ink)}
+.t-yellow.closing .btn.alt{--fill:var(--purple);--hc:#fff}
+.t-sky.closing .btn.alt{--fill:var(--yellow);--hc:var(--ink)}
+.t-green.closing .btn.alt{--fill:var(--purple);--hc:#fff}
+.t-purple.closing .btn:not(.alt){--fill:var(--pink);--hc:#fff}
+.t-yellow.closing .btn:not(.alt){--fill:var(--pink);--hc:var(--ink)}
+.t-sky.closing .btn:not(.alt){--fill:var(--purple);--hc:#fff}
+.t-green.closing .btn:not(.alt){--fill:var(--pink);--hc:#fff}
+.closing .btn:hover,.closing .btn:focus-visible{border-color:var(--fill);color:var(--hc)}
+
+/* v9.2 · "Faça parte" das faixas de fechamento um pouco maior */
+.closing .btns{align-items:center}
+.closing .btn:not(.alt){min-height:56px;padding:12px 30px;font-size:1.125rem}
+
+/* v9.3 · o preenchimento do hover sempre corre da esquerda para a direita: entra pela esquerda e sai pela direita.
+   Ele cobre a caixa inteira, inclusive a borda (origin border-box), e em repouso fica totalmente fora dela,
+   para não sobrar nenhuma lasca de cor na beirada */
+.btn,.chip,.menu-btn{background-origin:border-box;background-position:calc(100% + 3px) center;background-size:0 100%}
+.btn:hover,.chip:hover,.menu-btn:hover,.btn:focus-visible{background-position:left center;background-size:100% 100%}
+
+/* v9.4 · botões brancos sobre fundo azul (cartão "próxima oportunidade", newsletter, formulário do Faça parte):
+   no hover o preenchimento é amarelo, não o azul do fundo */
+.ag-next .btn,.brand .btn:not(.alt){--fill:var(--yellow);--hc:var(--ink)}
+.ag-next .btn:hover,.ag-next .btn:focus-visible,.brand .btn:not(.alt):hover,.brand .btn:not(.alt):focus-visible{border-color:var(--yellow);color:var(--ink)}
+
+/* v9.5 · Faça parte: quando o logotipo grande está quase todo coberto pela barra (e o pequeno volta à barra),
+   ele some de vez, para não sobrar a ponta das fitas aparecendo embaixo da barra */
+.fp-logo .lockup{transition:transform 1.6s cubic-bezier(.22,.7,.18,1),opacity .3s}
+body[data-page="faca-parte"]:not(.logo-out) .fp-logo .lockup{opacity:0}
+
+
+/* =====================================================================
+   v10 · RESPONSIVIDADE: celular, tablet e telas intermediárias
+   ===================================================================== */
+
+/* --- cabeçalhos das páginas: as fitas penduradas voltam no celular/tablet, mais curtas e finas,
+       presas à barra no canto direito; o texto começa abaixo das pontas, sem disputar espaço com elas --- */
+@media (max-width:980px){
+  .bands{display:flex;top:0;bottom:auto;height:clamp(64px,13vw,104px);right:var(--gutter);gap:8px}
+  .bands i{width:clamp(12px,2.6vw,18px)}
+  .page-head{padding-top:calc(clamp(64px,13vw,104px) + 12px);padding-bottom:var(--sp-5);align-items:flex-start;min-height:0}
+}
+
+/* --- hélice do Início: no celular/tablet ela vira um bloco próprio; as fitas surgem e somem
+       num degradê suave em cima e embaixo, em vez de serem cortadas pela borda --- */
+@media (max-width:900px){
+  .helix{-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 16%,#000 84%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 16%,#000 84%,transparent 100%)}
+  .has-helix::before,.has-helix::after{display:none}
+}
+
+/* --- texto do hero do Início um pouco maior em tablet e celular --- */
+@media (max-width:900px){
+  .tagline{font-size:clamp(1.5rem,4.4vw,2.25rem);line-height:1.12;max-width:17em}
+}
+
+/* --- missão: sem texto justificado em telas estreitas (evita buracos entre as palavras) --- */
+@media (max-width:1100px){
+  #missao .quote p,#missao .trama p{text-align:left;hyphens:manual;-webkit-hyphens:manual}
+}
+
+/* --- faixas de fechamento: no celular os dois botões ocupam a largura toda, um sobre o outro --- */
+@media (max-width:560px){
+  .closing .btns{flex-direction:column;align-items:stretch;width:100%}
+  .closing .btn{width:100%}
+}
+
+/* --- Faça parte: o logotipo grande nunca passa da largura da tela --- */
+.fp-logo .lockup{height:min(clamp(136px,19vw,270px), calc((100vw - 2 * var(--gutter)) / 2.85))}
+@media (max-width:900px){ .fp-hero{padding-top:clamp(48px,10vh,96px)} }
+
+/* --- Ecossistema · mapa --- */
+/* lista de pontos no painel lateral: quando não cabe, rola e se desfaz num degradê na base (sem corte seco) */
+.map-full .map-side .map-list{padding-bottom:20px;-webkit-mask-image:linear-gradient(180deg,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(180deg,#000 calc(100% - 36px),transparent)}
+@media (max-width:900px){
+  .map-full .map-side .map-list{-webkit-mask-image:none;mask-image:none;padding-bottom:0}
+  /* no celular o mapa mostra só o município: nomes das cidades vizinhas saem (ficariam cortados na borda) */
+  #mapSvg .lbl.o{display:none}
+  /* chips e painel alinhados à mesma margem */
+  .map-side .map-chips{padding:var(--sp-3) var(--gutter) 0}
+  .map-full .map-side .map-panel{padding-inline:var(--gutter)}
+}
+/* pontos maiores no celular, fáceis de tocar */
+@media (max-width:600px){
+  #pins .pin > *{transform:scale(1.5)}
+}
+
+/* --- tablets em retrato/notebooks pequenos: a barra com os cinco links ainda cabe sem apertar --- */
+@media (min-width:901px) and (max-width:1100px){
+  .nav-links a,.nav .nav-cta{padding:0 clamp(10px,1.3vw,16px)}
+}
+
+/* --- celular deitado (tela baixa): texto e botão do hero cabem na altura, sem espremer --- */
+@media (max-height:520px) and (orientation:landscape){
+  .tagline{font-size:clamp(1.25rem,6.4vh,1.75rem);max-width:26em}
+  .hero .btn{margin-top:14px;min-height:46px}
+  .hero{padding-block:var(--sp-4)}
+}

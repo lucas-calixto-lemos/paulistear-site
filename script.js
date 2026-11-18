@@ -30,6 +30,8 @@ const PARTNERS = [
   ['fasup.png', 'Faculdade FASUP', 80, 78],
   ['gente-inocente.png', 'Instituto Gente Inocente', 70, 82],
   ['adventux.png', 'AdventuX', 100, 76],
+  ['codecrab.png', 'CodeCrab Community', 160, 80],
+  ['yc-saude.png', 'YC Saúde', 190, 66],
 ];
 const cur = k => k === PAGE ? ' aria-current="page"' : '';
 
@@ -368,7 +370,7 @@ if (!RM && matchMedia('(hover:hover) and (pointer:fine)').matches){
   addEventListener('pointerdown', () => { if (raf){ cancelAnimationFrame(raf); raf = 0; } });
 }
 
-// a aba do logotipo encolhe aos poucos com a rolagem, até caber na barra
+// a barra (altura, logotipo e links) encolhe aos poucos com a rolagem, do tamanho grande ao compacto
 const firstBlock = $('main > :first-child');
 const navBlocks = $$('main > *, #site-footer > *');
 function navFx(){
